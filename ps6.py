@@ -8,6 +8,7 @@ import random
 
 import ps6_visualize
 import pylab
+import pylab
 
 # === Provided classes
 
