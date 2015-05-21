@@ -8,7 +8,6 @@ import random
 
 import ps6_visualize
 import pylab
-import pylab
 
 # === Provided classes
 
@@ -224,7 +223,7 @@ class StandardRobot(Robot):
         Move the robot to a new position and mark the tile it is on as having
         been cleaned.
         """
-        Robot.updatePositionAndClean
+        Robot.updatePositionAndClean()
 
 # === Problem 3
 
@@ -246,9 +245,23 @@ def runSimulation(num_robots, speed, width, height, min_coverage, num_trials,
     robot_type: class of robot to be instantiated (e.g. Robot or
                 RandomWalkRobot)
     """
-    for i in range(num_robots):
-        i = Robot((width,height),speed)
+    timeStep = 0
     for t in range(num_trials):
+        myPosition = Position(0,0)
+        thisRoom = RectangularRoom(width,height)
+        for i in range(num_robots):
+            i = Robot((thisRoom),speed)
+            thisRoom.cleanTileAtPosition(myPosition)
+            i.setDirection(90)
+            i.setRobotPosition(thisPosition)
+            otherPosition = myPosition.getNewPosition(Robot.getRobotDirection(),speed)
+            
+        while (thisRoom.isTileCleaned()) == True:
+            timeStep = timeStep + 1
+    return timeStep
+            
+            
+    
         
 
 # === Problem 4
