@@ -143,8 +143,6 @@ def hill_climbing(graph, start, goal):
         connected_nodes = graph.get_connected_nodes(agenda[top][-1])
         print 'connected nodes',connected_nodes
 
-        #below is the only difference between bfs and dfs
-        #we pop the element at the end of the list
         smma = agenda.pop()
         
         print 'element popped',smma
