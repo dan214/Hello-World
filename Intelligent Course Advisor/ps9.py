@@ -11,15 +11,7 @@ VALUE, WORK = 0, 1
 # Problem 1: Building A Subject Dictionary
 #
 def loadSubjects(filename):
-    """
-    Returns a dictionary mapping subject name to (value, work), where the name
-    is a string and the value and work are integers. The subject information is
-    read from the file named by the string filename. Each line of the file
-    contains a string of the form "name,value,work".
-
-    returns: dictionary mapping subject name to (value, work)
-    """
-
+    
     # The following sample code reads lines from the specified file and prints
     # each one.
     inputFile = open(filename,'r')
@@ -64,10 +56,6 @@ def printSubjects(subjects):
 #
 
 def cmpValue(subInfo1, subInfo2):
-    """
-    Returns True if value in (value, work) tuple subInfo1 is GREATER than
-    value in (value, work) tuple in subInfo2
-    """
     return subInfo1[0] > subInfo2[0]
 
 def cmpWork(subInfo1, subInfo2):
